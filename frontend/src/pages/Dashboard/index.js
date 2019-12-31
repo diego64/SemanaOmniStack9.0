@@ -73,6 +73,11 @@ export default function Dashboard() {
       <Link to="/new">
         <button className="btn">Cadastrar novo spot</button>
       </Link>
+
+      <Link to="/">
+        <button className="btnSair">Sair</button>
+      </Link>
+    
     </>
   )
 }

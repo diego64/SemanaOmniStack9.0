@@ -88,3 +88,57 @@ body, input, button {
 .content button.btn:hover {
   background: #E14F50;
 } 
+
+.content button.btnSair {
+  margin-top: 10px; 
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px;  
+  font-size: 16px;
+  font-weight: bold;
+  background: #F05A5B;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.content button.btn:hover {
+  background: #E14F50;
+} 
+
+.content button.btnCancelar {
+  margin-top: 10px; 
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px;  
+  font-size: 16px;
+  font-weight: bold;
+  background: #F05A5B;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.content button.btn:hover {
+  background: #E14F50;
+} 
+
+.content button.btnLimpar {
+  margin-top: 10px; 
+  border: 0;
+  border-radius: 2px;
+  width: 100%;
+  height: 42px;
+  padding: 0 20px;  
+  font-size: 16px;
+  font-weight: bold;
+  background: #F05A5B;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.content button.btn:hover {
+  background: #E14F50;
+} 

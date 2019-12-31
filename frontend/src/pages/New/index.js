@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import './styles.css'
@@ -71,8 +72,18 @@ export default function New( { history } ) {
                 onChange={event => setPrice(event.target.value)}
             />
             
+           
             <button type="submit" className="btn">Cadastrar</button>
 
-        </form>
-    )
+            <button type="reset" value="limpar"className="btnLimpar">Limpar</button>
+
+            <Link to="/dashboard">
+            <button className="btnCancelar">Cancelar</button>
+            </Link>
+
+           
+
+    </form>
+    
+    ) 
 }
