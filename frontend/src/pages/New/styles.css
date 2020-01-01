@@ -1,22 +1,51 @@
 label#thumbnail {
-    margin-bottom: 20px;
-    border: 1px dashed #DDD;
-    background-size: cover;
-    cursor: pointer;
-    height: 160px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-bottom: 20px;
+  border: 1px dashed #ddd;
+  background-size: cover;
+  cursor: pointer;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 label#thumbnail input {
-    display: none;
+  display: none;
 }
 
 label#thumbnail.has-thumbnail {
-    border: 0;
+  border: 0;
 }
 
 label#thumbnail.has-thumbnail img {
-    display: none;
- }
+  display: none;
+}
+
+button.btnSairNew {
+  border: 0;
+  margin-left: 45%;
+  background: transparent;
+  cursor: pointer;
+}
+
+button.btnLimparCamposNew {
+  border: 0;
+  margin-left: 30%;
+  background: transparent;
+  cursor: pointer;
+}
+
+div.divCabecalho {
+  flex-direction: row;
+  margin-block-end: 5%;
+}
+
+img.iconBtnLimparCampos {
+  width: 35px;
+  height: 35px;
+}
+
+img.iconBtnSair {
+  width: 39px;
+  height: 39px;
+}
