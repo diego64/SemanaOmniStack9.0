@@ -2,14 +2,16 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
-import './styles.css'
+import './styles.css';
 import camera from '../../assets/camera.svg';
 
 export default function New( { history } ) {
     const [thumbnail, setThumbnail] = useState(null);
-    const [company, setCompany] = useState('');
-    const [techs, setTechs] = useState('');
-    const [price, setPrice] = useState('');
+    const [company, setCompany] = useState("");
+    const [techs, setTechs] = useState("");
+    const [price, setPrice] = useState("");
+
+    const [msgError, setMsgError] = useState(); //Mensagem de erro ira aparecer se o campo !thumbnail, company ou techs estiver vazio
 
     const preview = useMemo(() => {
         return thumbnail ? URL.createObjectURL(thumbnail) : null
@@ -18,23 +20,29 @@ export default function New( { history } ) {
     async function handleSubmit(event) {
         event.preventDefault();
 
+        //Verifica se há informações no form
+    if (!thumbnail || !company || !techs) {
+        setMsgError("Está vazio ou inválido.");
+      } else {
         const data = new FormData();
-        const user_id = localStorage.getItem('user');
-
-        data.append('thumbnail', thumbnail);
-        data.append('company', company);
-        data.append('techs', techs);
-        data.append('price', price);
-
-        await api.post('/spots', data, {
-            headers: { 
-                user_id
-            }
-        }); 
-
-        history.push('/dashboard');
+        const user_id = localStorage.getItem("user");
+  
+        data.append("thumbnail", thumbnail);
+        data.append("company", company);
+        data.append("techs", techs);
+        data.append("price", price);
+  
+        await api.post("/spots", data, {
+          headers: {
+            user_id
+          }
+        });
+  
+        history.push("/dashboard");
+      }
     }
 
+    //Função para limpar dos dados inseridos 
     function limparCampos() {
         setThumbnail(null);
         setCompany("");
@@ -44,6 +52,7 @@ export default function New( { history } ) {
 
     return (
         <form onSubmit={handleSubmit}>
+             {msgError ? <p className="msgError">{msgError}</p> : <> </>} 
             <label
                 id="thumbnail"
                 style={{ backgroundImage: `url(${preview})`}}
@@ -56,6 +65,8 @@ export default function New( { history } ) {
             </label>
 
             <label htmlFor="company">EMPRESA *</label>
+            {msgError ? <p className="msgError">{msgError}</p> : <> </>}
+
             <input 
                 id="company"
                 placeholder="Sua empresa incrível"
@@ -64,6 +75,7 @@ export default function New( { history } ) {
             />
 
             <label htmlFor="techs">TECNOLOGIAS * <span>(separadas por vírgula)</span></label>
+            {msgError ? <p className="msgError">{msgError}</p> : <> </>}
             <input 
                 id="techs"
                 placeholder="Quais tecnologias usam?"
@@ -78,6 +90,8 @@ export default function New( { history } ) {
                 value={price}
                 onChange={event => setPrice(event.target.value)}
             />
+
+            
             
            
             <button type="submit" className="btn">Cadastrar</button>

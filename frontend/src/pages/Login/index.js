@@ -3,18 +3,25 @@ import api from '../../services/api';
 
 export default function Login({ history }) {
     const [email, setEmail] = useState('');
+    const [msgError, setMsgError] = useState();
 
     async function handleSubmit(event) {
       event.preventDefault();
-      
-      const response = await api.post('/sessions', { email });
-  
-      const { _id } = response.data;
-  
-      localStorage.setItem('user', _id);
 
-      history.push('/dashboard');
-    }
+     //Verificação se o campo e-mail está vazio ou inválido 
+      if (! email ) {
+        setMsgError("Está vazio ou inválido.");
+        } else {
+            const response = await api.post('/sessions', { email });
+  
+            const { _id } = response.data;
+        
+            localStorage.setItem('user', _id);
+      
+            history.push('/dashboard');
+        }
+      
+}
     
         return (
         <>
@@ -22,6 +29,7 @@ export default function Login({ history }) {
             </p>
 
             <form onSubmit={handleSubmit}>
+            {msgError ? <p className="msgError">{msgError}</p> : <> </>}
             <label htmlFor="email">E-MAIL *</label>
             <input
                 id="email"

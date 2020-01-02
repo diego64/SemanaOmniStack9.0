@@ -125,7 +125,7 @@ body, input, button {
   background: #E14F50;
 } 
 
-.content button.btnLimparCamposNew{
+.content button.btnLimpar{
   margin-top: 10px; 
   border: 0;
   border-radius: 2px;
@@ -142,3 +142,7 @@ body, input, button {
 .content button.btn:hover {
   background: #E14F50;
 } 
+
+.content p.msgError {
+  color: #e81517;
+}
