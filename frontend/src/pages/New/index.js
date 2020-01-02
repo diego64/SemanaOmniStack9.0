@@ -78,7 +78,7 @@ export default function New( { history } ) {
             <button type="reset" value="limpar"className="btnLimpar">Limpar</button>
 
             <Link to="/dashboard">
-            <button className="btnCancelar">Cancelar</button>
+            <button className="btnCancelar">Voltar</button>
             </Link>
 
            
