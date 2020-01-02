@@ -35,6 +35,13 @@ export default function New( { history } ) {
         history.push('/dashboard');
     }
 
+    function limparCampos() {
+        setThumbnail(null);
+        setCompany("");
+        setTechs("");
+        setPrice("");
+      }
+
     return (
         <form onSubmit={handleSubmit}>
             <label
@@ -75,7 +82,7 @@ export default function New( { history } ) {
            
             <button type="submit" className="btn">Cadastrar</button>
 
-            <button type="reset" value="limpar"className="btnLimpar">Limpar</button>
+            <button className="btnLimpar" onClick={limparCampos}>Limpar</button>
 
             <Link to="/dashboard">
             <button className="btnCancelar">Voltar</button>
