@@ -5,12 +5,12 @@ import api from '../services/api';
 
 import logo from '../assets/logo.png';
 
-export default function Login({ navigation }) {
+export default function Login({ navigation }) { 
     const [email, setEmail] = useState('');
     const [techs, setTechs] = useState('');
 
-    useEffect(() => {
-         AsyncStorage.getItem('user').then(user => {
+    useEffect(() => {  //Toda vez que a tela é carrega ele é acionada 
+         AsyncStorage.getItem('user').then(user => {  //Busca no banco de dados interno do aparelho moblie 
              if (user) {
                 navigation.navigate('List');
              }

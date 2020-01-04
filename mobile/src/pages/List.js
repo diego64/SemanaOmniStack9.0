@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import socketio from 'socket.io-client';
-import { Alert, SafeAreaView, ScrollView, StyleSheet, Image, AsyncStorage } from 'react-native';
+import { Alert, SafeAreaView, ScrollView, StyleSheet, Image, AsyncStorage, TouchableOpacity, Text, View } from 'react-native';
 
 import SpotList from '../components/SpotList';
 
 import logo from '../assets/logo.png';
 
-export default function List() {
+export default function List({ navigation }) {
   const [techs, setTechs] = useState([]);
 
   useEffect(() => {
@@ -29,6 +29,12 @@ export default function List() {
     })
   }, []);
 
+    //Funcionalida do botão sair
+    async function Sair() { 
+      await AsyncStorage.removeItem('user');
+      navigation.navigate('Login');
+    } 
+  
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={logo} />
@@ -36,13 +42,22 @@ export default function List() {
       <ScrollView>
         {techs.map(tech => <SpotList key={tech} tech={tech} />)}
       </ScrollView>
-    </SafeAreaView>
+   
+      <TouchableOpacity onPress={Sair} style={[styles.button, styles.cancelButton]}>
+        <Text style={styles.buttonText}>Sair</Text>
+      </TouchableOpacity>
+  
+
+      </SafeAreaView>
+    
   )
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 24 // Ajute da logo para smartphone sem display infinito
   },
 
   logo: {
@@ -50,5 +65,20 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
     alignSelf: 'center',
     marginTop: 10
+  },
+
+  button: {
+    height: 32,
+    backgroundColor: '#f05a5b',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+    marginTop: 15,
+  },
+
+  buttonText: {
+    color: '#FFF',
+    fontWeight: 'bold',
+    fontSize: 15,
   },
 });
