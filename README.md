@@ -21,7 +21,7 @@ Na aplicação Web:
 
 Na aplicação Moblie:
 
-- Adcição do botão sair;
+- [x] Adcição do botão sair;
 
 ## References
 
