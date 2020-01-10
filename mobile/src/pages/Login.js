@@ -1,14 +1,14 @@
 import React, { useState, useEffect }from 'react';
-import { View, AsyncStorage, KeyboardAvoidingView, Image, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, AsyncStorage, KeyboardAvoidingView, Image, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
 import api from '../services/api';
 
 import logo from '../assets/logo.png';
 
 export default function Login({ navigation }) { 
-    const [email, setEmail] = useState('');
-    const [techs, setTechs] = useState('');
-
+    const [email, setEmail] = useState(''); 
+    const [techs, setTechs] = useState(''); 
+    
     useEffect(() => {  //Toda vez que a tela é carrega ele é acionada 
          AsyncStorage.getItem('user').then(user => {  //Busca no banco de dados interno do aparelho moblie 
              if (user) {
@@ -18,25 +18,38 @@ export default function Login({ navigation }) {
     }, []);
   
     async function handleSubmit() {
-      const response = await api.post('/sessions', {
-          email 
-      })
-
-      const { _id } = response.data;
-
-      await AsyncStorage.setItem('user', _id);
-      await AsyncStorage.setItem('techs', techs);
-    
-      navigation.navigate('List');
-    
-    }
-
+        //Verifca se há informação no campo e-mail e tecnologia
+        if (!email || !techs) {
+            Alert.alert( //Alerta informando dos campos vazios
+                'Acesso Negado',
+                'E-mail ou tecnologias não encontrados',
+        [
+          {
+            text: 'Cancelar',
+            onPress: () => console.log('Cancel Pressed'),
+            style: 'cancel',
+          },
+          {text: 'OK', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true},
+            )
+        } else {
+            const response = await api.post('/sessions', {
+            email 
+        })
+  
+        const { _id } = response.data;
+  
+        await AsyncStorage.setItem('user', _id);
+        await AsyncStorage.setItem('techs', techs);
       
-
+        navigation.navigate('List');
+      
+      }}
+      
     return (
         <KeyboardAvoidingView behavior="padding" style={styles.container}> 
             <Image source={logo} />
-
             <View style={styles.form}>
                 <Text style={styles.label}> SEU E-MAIL *</Text>
                 <TextInput 

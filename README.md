@@ -14,14 +14,15 @@ O sistema é composto por back-end (Node.js), front-end (React) e moblie (React-
 Na aplicação Web:
 
 - [x] Não permirtir login com o campo e-mail vazio;
-- [x] Adcição do botão sair na tela dashboard ;
-- [x] Adcição do botão de limpar os campos preenchidos na tela new;
+- [x] Adição do botão sair na tela dashboard ;
+- [x] Adição do botão de limpar os campos preenchidos na tela new;
 - [x] Não permirtir o cadastro com algum campo vazio na tela new;
 - [x] Botão voltar na tela new;
 
 Na aplicação Moblie:
 
-- [x] Adcição do botão sair;
+- [x] Adição do botão sair;
+- [x] Adição de um alerta no botão "Encontrar spots" informando que o campo e-mail ou tecnologia incorretos ou em braco;
 
 ## References
 

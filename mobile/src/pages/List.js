@@ -29,7 +29,7 @@ export default function List({ navigation }) {
     })
   }, []);
 
-    //Funcionalida do botão sair
+    //Funcionalidade do botão sair
     async function Sair() { 
       await AsyncStorage.removeItem('user');
       navigation.navigate('Login');
