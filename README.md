@@ -40,6 +40,6 @@ Sistema foi desenvolvido para realizar cadastros e reservas de empresas baseado 
 -  Adição do botão sair;
 -  Adição de um alerta no botão "Encontrar spots" informando que o campo e-mail ou tecnologia incorretos ou em branco;
 
-## 📹 Referência 
+## 🎥 Referência 
 
 - Semana OmniStack 9.0
