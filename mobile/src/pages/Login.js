@@ -26,10 +26,10 @@ export default function Login({ navigation }) {
         [
           {
             text: 'Cancelar',
-            onPress: () => console.log('Cancel Pressed'),
+            onPress: () => console.log('Botão Cancelar acionado'),
             style: 'cancel',
           },
-          {text: 'OK', onPress: () => console.log('OK Pressed')},
+          {text: 'OK', onPress: () => console.log('Botão OK acionado')},
         ],
         {cancelable: true},
             )

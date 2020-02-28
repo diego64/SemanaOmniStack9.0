@@ -91,18 +91,13 @@ export default function New( { history } ) {
                 onChange={event => setPrice(event.target.value)}
             />
 
-            
-            
-           
             <button type="submit" className="btn">Cadastrar</button>
 
             <button className="btnLimpar" onClick={limparCampos}>Limpar</button>
 
             <Link to="/dashboard">
             <button className="btnCancelar">Voltar</button>
-            </Link>
-
-           
+            </Link>   
 
     </form>
     
