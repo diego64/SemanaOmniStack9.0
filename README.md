@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Expo](https://expo.io/)
 - [MongoDB](hhttps://www.mongodb.com/)
 
-## 📝 Projeto
+## 📋 Projeto
 
 Sistema foi desenvolvido para realizar cadastros e reservas de empresas baseado em suas tecnologias oferecidas e preços.
 
@@ -35,7 +35,7 @@ Sistema foi desenvolvido para realizar cadastros e reservas de empresas baseado 
 -  Não permirtir o cadastro com algum campo vazio na tela new;
 -  Botão voltar na tela new;
 
-## 🔭 Funcionalidades adcionandas na apliacação mobile 
+## 📱 Funcionalidades adcionandas na apliacação mobile 
 
 -  Adição do botão sair;
 -  Adição de um alerta no botão "Encontrar spots" informando que o campo e-mail ou tecnologia incorretos ou em branco;
