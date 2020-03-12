@@ -43,3 +43,8 @@ Sistema foi desenvolvido para realizar cadastros e reservas de empresas baseado 
 ## 🎥 Referência 
 
 - Semana OmniStack 9.0
+
+## 🔔 Observações 
+
+- Existem duas Branch (master e diego)
+- A Branch diego tem novas funcionalidades masi avançadas e de verificação de usuário e campos ja a master são alterações simples de verificação
