@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Expo](https://expo.io/)
 - [MongoDB](hhttps://www.mongodb.com/)
 
-## 📋 Projeto
+## 📋 Objetivo do Projeto
 
 Sistema foi desenvolvido para realizar cadastros e reservas de empresas baseado em suas tecnologias oferecidas e preços.
 
