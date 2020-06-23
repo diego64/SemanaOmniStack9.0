@@ -17,8 +17,8 @@
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org/)
+- [Node.Js](https://nodejs.org/en/)
+- [React.Js](https://reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
 - [MongoDB](hhttps://www.mongodb.com/)
